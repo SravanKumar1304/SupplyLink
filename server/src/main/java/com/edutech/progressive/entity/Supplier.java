@@ -1,325 +1,263 @@
 package com.edutech.progressive.entity;
 
 public class Supplier implements Comparable<Supplier> {
- 
-    private int supplierId;
 
+    private int supplierId;
 
     private String supplierName;
 
-
     private String email;
-
 
     private String phone;
 
-
     private String address;
-
 
     private String username;
 
-
     private String password;
 
-
     private String role;
- 
+
     public Supplier() {
 
-
     }
- 
-    public Supplier(int supplierId, String supplierName, String email, String phone, String address, String username, String password, String role) {
 
+    public Supplier(int supplierId, String supplierName, String email, String phone, String address, String username,
+            String password, String role) {
 
         this.supplierId = supplierId;
 
-
         this.supplierName = supplierName;
-
 
         this.email = email;
 
-
         this.phone = phone;
-
 
         this.address = address;
 
-
         this.username = username;
-
 
         this.password = password;
 
-
         this.role = role;
 
-
     }
- 
-    public String getEmail() {
 
+    public String getEmail() {
 
         return email;
 
-
     }
- 
-    public int getSupplierId() {
 
+    public int getSupplierId() {
 
         return supplierId;
 
-
     }
- 
-    public void setSupplierId(int supplierId) {
 
+    public void setSupplierId(int supplierId) {
 
         this.supplierId = supplierId;
 
-
     }
- 
-    public String getSupplierName() {
 
+    public String getSupplierName() {
 
         return supplierName;
 
-
     }
- 
-    public void setSupplierName(String supplierName) {
 
+    public void setSupplierName(String supplierName) {
 
         this.supplierName = supplierName;
 
-
     }
- 
-    public String getUsername() {
 
+    public String getUsername() {
 
         return username;
 
-
     }
- 
-    public void setUsername(String username) {
 
+    public void setUsername(String username) {
 
         this.username = username;
 
-
     }
- 
-    public String getPassword() {
 
+    public String getPassword() {
 
         return password;
 
-
     }
- 
-    public void setPassword(String password) {
 
+    public void setPassword(String password) {
 
         this.password = password;
 
-
     }
- 
-    public void setEmail(String email) {
 
+    public void setEmail(String email) {
 
         this.email = email;
 
-
     }
- 
-    public String getPhone() {
 
+    public String getPhone() {
 
         return phone;
 
-
     }
- 
-    public void setPhone(String phone) {
 
+    public void setPhone(String phone) {
 
         this.phone = phone;
 
-
     }
- 
-    public String getAddress() {
 
+    public String getAddress() {
 
         return address;
 
-
     }
- 
-    public void setAddress(String address) {
 
+    public void setAddress(String address) {
 
         this.address = address;
 
-
     }
- 
-    public String getRole() {
 
+    public String getRole() {
 
         return role;
 
-
     }
- 
-    public void setRole(String role) {
 
+    public void setRole(String role) {
 
         this.role = role;
 
-
     }
- 
-    @Override
 
+    @Override
 
     public int compareTo(Supplier otherSupplier) {
 
-
         return this.getSupplierName().compareTo(otherSupplier.getSupplierName());
-
 
     }
 
-
 }
- 
-
-
-
-
-
-
-
-
-
-
-
-
 
 // package com.edutech.progressive.entity;
 
 // public class Supplier implements Comparable<Supplier> {
-//     private int supplierId;
-//     private String supplierName;
-//     private String email;
-//     private String phone;
-//     private String address;
-//     private String username;
-//     private String password;
-//     private String role;
-//     public Supplier() {
-//     }
-//     // public Supplier(int supplierId, String supplierName, String email, String phone, String address, String username,
-//     //         String password, String role) {
-//     //     this.supplierId = supplierId;
-//     //     this.supplierName = supplierName;
-//     //     this.email = email;
-//     //     this.phone = phone;
-//     //     this.address = address;
-//     //     this.username = username;
-//     //     this.password = password;
-//     //     this.role = role;
-//     // }
+// private int supplierId;
+// private String supplierName;
+// private String email;
+// private String phone;
+// private String address;
+// private String username;
+// private String password;
+// private String role;
+// public Supplier() {
+// }
+// // public Supplier(int supplierId, String supplierName, String email, String
+// phone, String address, String username,
+// // String password, String role) {
+// // this.supplierId = supplierId;
+// // this.supplierName = supplierName;
+// // this.email = email;
+// // this.phone = phone;
+// // this.address = address;
+// // this.username = username;
+// // this.password = password;
+// // this.role = role;
+// // }
 
-//      public Supplier(int supplierId, String supplierName, String email, String phone, String address, String username, String password, String role) {
+// public Supplier(int supplierId, String supplierName, String email, String
+// phone, String address, String username, String password, String role) {
 
-//         this.supplierId = supplierId;
+// this.supplierId = supplierId;
 
-//         this.supplierName = supplierName;
+// this.supplierName = supplierName;
 
-//         this.email = email;
+// this.email = email;
 
-//         this.phone = phone;
+// this.phone = phone;
 
-//         this.address = address;
+// this.address = address;
 
-//         this.username = username;
+// this.username = username;
 
-//         this.password = password;
+// this.password = password;
 
-//         this.role = role;
+// this.role = role;
 
-//     }
-    
-//     public Supplier(String supplierName, String email, String phone, String address, String username, String password,
-//             String role) {
-//         this.supplierName = supplierName;
-//         this.email = email;
-//         this.phone = phone;
-//         this.address = address;
-//         this.username = username;
-//         this.password = password;
-//         this.role = role;
-//     }
-//     public int getSupplierId() {
-//         return supplierId;
-//     }
-//     public void setSupplierId(int supplierId) {
-//         this.supplierId = supplierId;
-//     }
-//     public String getSupplierName() {
-//         return supplierName;
-//     }
-//     public void setSupplierName(String supplierName) {
-//         this.supplierName = supplierName;
-//     }
-//     public String getEmail() {
-//         return email;
-//     }
-//     public void setEmail(String email) {
-//         this.email = email;
-//     }
-//     public String getPhone() {
-//         return phone;
-//     }
-//     public void setPhone(String phone) {
-//         this.phone = phone;
-//     }
-//     public String getAddress() {
-//         return address;
-//     }
-//     public void setAddress(String address) {
-//         this.address = address;
-//     }
-//     public String getUsername() {
-//         return username;
-//     }
-//     public void setUsername(String username) {
-//         this.username = username;
-//     }
-//     public String getPassword() {
-//         return password;
-//     }
-//     public void setPassword(String password) {
-//         this.password = password;
-//     }
-//     public String getRole() {
-//         return role;
-//     }
-//     public void setRole(String role) {
-//         this.role = role;
-//     }
-//     @Override
-//     public int compareTo(Supplier o) {
-//        return this.supplierName.compareTo(o.getSupplierName());
-//     }
-    
+// }
+
+// public Supplier(String supplierName, String email, String phone, String
+// address, String username, String password,
+// String role) {
+// this.supplierName = supplierName;
+// this.email = email;
+// this.phone = phone;
+// this.address = address;
+// this.username = username;
+// this.password = password;
+// this.role = role;
+// }
+// public int getSupplierId() {
+// return supplierId;
+// }
+// public void setSupplierId(int supplierId) {
+// this.supplierId = supplierId;
+// }
+// public String getSupplierName() {
+// return supplierName;
+// }
+// public void setSupplierName(String supplierName) {
+// this.supplierName = supplierName;
+// }
+// public String getEmail() {
+// return email;
+// }
+// public void setEmail(String email) {
+// this.email = email;
+// }
+// public String getPhone() {
+// return phone;
+// }
+// public void setPhone(String phone) {
+// this.phone = phone;
+// }
+// public String getAddress() {
+// return address;
+// }
+// public void setAddress(String address) {
+// this.address = address;
+// }
+// public String getUsername() {
+// return username;
+// }
+// public void setUsername(String username) {
+// this.username = username;
+// }
+// public String getPassword() {
+// return password;
+// }
+// public void setPassword(String password) {
+// this.password = password;
+// }
+// public String getRole() {
+// return role;
+// }
+// public void setRole(String role) {
+// this.role = role;
+// }
+// @Override
+// public int compareTo(Supplier o) {
+// return this.supplierName.compareTo(o.getSupplierName());
+// }
+
 // }
