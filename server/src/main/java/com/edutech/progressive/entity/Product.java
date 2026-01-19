@@ -15,12 +15,16 @@ public class Product {
     public Product(int productId, int warehouseId, String productName, String productDescription, int quantity,
             Long price) {
         this.productId = productId;
-        this.warehouseId = warehouseId;
+        this.warehouseId =warehouseId;
         this.productName = productName;
         this.productDescription = productDescription;
         this.quantity = quantity;
         this.price = price;
     }
+    
+
+
+   
 
 
     public int getProductId() {
