@@ -8,71 +8,48 @@ import com.edutech.progressive.entity.Warehouse;
 import com.edutech.progressive.service.WarehouseService;
 
 public class WarehouseServiceImplArraylist implements WarehouseService {
- 
-    private static List<Warehouse> warehouseList = new ArrayList<>();
- 
-    @Override
 
+    private static List<Warehouse> warehouseList = new ArrayList<>();
+
+    @Override
 
     public List<Warehouse> getAllWarehouses() {
 
-
         return warehouseList;
 
-
     }
- 
-    @Override
 
+    @Override
 
     public int addWarehouse(Warehouse warehouse) {
 
-
         warehouseList.add(warehouse);
-
 
         return warehouseList.size();
 
-
     }
- 
-    @Override
 
+    @Override
 
     public List<Warehouse> getWarehousesSortedByCapacity() {
 
-
         List<Warehouse> sortedWarehouses = warehouseList;
-
 
         sortedWarehouses.sort(Comparator.comparing(Warehouse::getCapacity)); // Sort by supplier name
 
-
         return sortedWarehouses;
 
-
     }
- 
-    @Override
 
+    @Override
 
     public void emptyArrayList() {
 
-
         warehouseList = new ArrayList<>();
-
 
     }
 
-
 }
- 
-
-
-
-
-
-
 
 // package com.edutech.progressive.service.impl;
 
@@ -86,31 +63,31 @@ public class WarehouseServiceImplArraylist implements WarehouseService {
 
 // public class WarehouseServiceImplArraylist implements WarehouseService {
 
-//    private static List<Warehouse> warehouseList = new ArrayList<>();
+// private static List<Warehouse> warehouseList = new ArrayList<>();
 
-//     @Override
-//     public List<Warehouse> getAllWarehouses() {
-//        return warehouseList;
-//     }
+// @Override
+// public List<Warehouse> getAllWarehouses() {
+// return warehouseList;
+// }
 
-//     @Override
-//     public int addWarehouse(Warehouse warehouse) {
-//       warehouseList.add(warehouse);
-//       return warehouseList.size();
-//     }
+// @Override
+// public int addWarehouse(Warehouse warehouse) {
+// warehouseList.add(warehouse);
+// return warehouseList.size();
+// }
 
-//     @Override
-//     public List<Warehouse> getWarehousesSortedByCapacity() {
-//       // Collections.sort(warehouseList);
-//       // return warehouseList;
-//       List<Warehouse> sortedWarehouses = warehouseList;
-//       sortedWarehouses.sort(Comparator.comparing(Warehouse::getCapacity));
-//       return sortedWarehouses;
-      
-//     }
+// @Override
+// public List<Warehouse> getWarehousesSortedByCapacity() {
+// // Collections.sort(warehouseList);
+// // return warehouseList;
+// List<Warehouse> sortedWarehouses = warehouseList;
+// sortedWarehouses.sort(Comparator.comparing(Warehouse::getCapacity));
+// return sortedWarehouses;
 
-//     public void emptyArrayList(){
-//         warehouseList.clear();
-//     }
+// }
+
+// public void emptyArrayList(){
+// warehouseList.clear();
+// }
 
 // }
