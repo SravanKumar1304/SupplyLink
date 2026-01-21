@@ -1,36 +1,58 @@
 package com.edutech.progressive.service.impl;
 
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
-import com.edutech.progressive.entity.Supplier;
-import com.edutech.progressive.service.SupplierService;
+import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.edutech.progressive.entity.Supplier;
+import com.edutech.progressive.repository.SupplierRepository;
+import com.edutech.progressive.service.SupplierService;
+@Service
 public class SupplierServiceImplJpa implements SupplierService {
+
+    private SupplierRepository supplierRepository;
+    
+    @Autowired
+    public SupplierServiceImplJpa(SupplierRepository supplierRepository) {
+        this.supplierRepository = supplierRepository;
+    }
 
     @Override
     public List<Supplier> getAllSuppliers() throws SQLException {
-      return List.of();
+        return supplierRepository.findAll();
     }
 
     @Override
     public int addSupplier(Supplier supplier) throws SQLException {
-        return -1;
+        return supplierRepository.save(supplier).getSupplierId();
     }
 
     @Override
     public List<Supplier> getAllSuppliersSortedByName() throws SQLException {
-        return List.of();
+        List<Supplier> sortedSuppliers = supplierRepository.findAll();
+        Collections.sort(sortedSuppliers);
+        return sortedSuppliers;
+
     }
 
-     public void updateSupplier(Supplier supplier) throws SQLException{
+    @Override
+    public void updateSupplier(Supplier supplier) throws SQLException {
+        supplierRepository.save(supplier);
     }
 
-    public void deleteSupplier(int supplierId)throws SQLException {
+    @Override
+    @Transactional
+    public void deleteSupplier(int supplierId) throws SQLException {
+        supplierRepository.deleteBySupplierId(supplierId);
     }
 
+    @Override
     public Supplier getSupplierById(int supplierId) throws SQLException {
-        return null;
+        return supplierRepository.findBySupplierId(supplierId);
     }
-
 }
