@@ -17,8 +17,12 @@ import java.util.List;
 @RequestMapping("/warehouse")
 public class WarehouseController {
 
-    @Autowired
     WarehouseServiceImplJpa warehouseServiceImplJpa;
+
+    @Autowired
+    public WarehouseController(WarehouseServiceImplJpa warehouseServiceImplJpa) {
+        this.warehouseServiceImplJpa = warehouseServiceImplJpa;
+    }
 
     @GetMapping
     public ResponseEntity<List<Warehouse>> getAllWarehouses() throws SQLException {
@@ -72,13 +76,13 @@ public class WarehouseController {
     }
 
     @GetMapping("/supplier/{supplierId}")
-    public ResponseEntity<?> getWarehousesBySupplier(@PathVariable int supplierId) throws SQLException {
+    public ResponseEntity<List<Warehouse>> getWarehousesBySupplier(@PathVariable int supplierId) throws SQLException {
         try {
             List<Warehouse> warehouses = warehouseServiceImplJpa.getWarehouseBySupplier(supplierId);
             return new ResponseEntity<>(warehouses, HttpStatus.OK);
         }catch (Exception e) {
             // Return a generic error message for any other exceptions
-            return new ResponseEntity<>("An unexpected error occurred: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
