@@ -48,9 +48,9 @@ public class ProductServiceImplJpa implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProductByWarehouse(int productId){
-        // return productRepository.findAllByWarehouse_WarehouseId(warehouseId);
-        return null;
+    public List<Product> getAllProductByWarehouse(int warehouseId){
+         return productRepository.findAllByWarehouse_WarehouseId(warehouseId);
+        //return null;
     }
 
 }
