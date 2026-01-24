@@ -25,5 +25,5 @@ public interface ProductRepository extends JpaRepository<Product,Integer>{
      @Query("DELETE FROM Product p WHERE p.warehouse.warehouseId in (Select w.warehouseId from Warehouse w where w.supplier.supplierId = :supplierId)")
      void deleteBySupplierId(@Param("supplierId") int supplierId);
  
-    // int countByWarehouse_WarehouseId(Integer warehouseId);
+    int countByWarehouse_WarehouseId(Integer warehouseId);
 }
