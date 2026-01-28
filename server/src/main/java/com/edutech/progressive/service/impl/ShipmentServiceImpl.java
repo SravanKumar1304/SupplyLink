@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
 import com.edutech.progressive.entity.Shipment;
+import com.edutech.progressive.repository.InsuranceRepository;
 import com.edutech.progressive.repository.ShipmentRepository;
 import com.edutech.progressive.service.ShipmentService;
  
@@ -16,8 +17,8 @@ public class ShipmentServiceImpl implements ShipmentService {
     @Autowired
     ShipmentRepository shipmentRepository;
  
-    // @Autowired
-    // InsuranceRepository insuranceRepository;
+    @Autowired
+    InsuranceRepository insuranceRepository;
  
     @Override
     public List<Shipment> getAllShipments() throws SQLException {
@@ -41,7 +42,7 @@ public class ShipmentServiceImpl implements ShipmentService {
  
     @Override
     public void deleteShipment(int shipmentId) throws SQLException {
-        // insuranceRepository.deleteByShipmentId(shipmentId);
+        insuranceRepository.deleteByShipmentId(shipmentId);
         shipmentRepository.deleteById(shipmentId);
     }
 }
