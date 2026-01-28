@@ -12,6 +12,7 @@ import com.edutech.progressive.entity.Supplier;
 import com.edutech.progressive.exception.SupplierAlreadyExistsException;
 import com.edutech.progressive.exception.SupplierDoesNotExistException;
 import com.edutech.progressive.repository.ProductRepository;
+import com.edutech.progressive.repository.ShipmentRepository;
 import com.edutech.progressive.repository.SupplierRepository;
 import com.edutech.progressive.repository.WarehouseRepository;
 import com.edutech.progressive.service.SupplierService;
@@ -28,8 +29,8 @@ public class SupplierServiceImplJpa implements SupplierService {
     @Autowired
     ProductRepository productRepository;
  
-    // @Autowired
-    // ShipmentRepository shipmentRepository;
+    @Autowired
+    ShipmentRepository shipmentRepository;
  
     private final SupplierRepository supplierRepository;
  
@@ -81,7 +82,7 @@ public class SupplierServiceImplJpa implements SupplierService {
     @Override
     @Transactional
     public void deleteSupplier(int supplierId) throws SQLException {
-        // shipmentRepository.deleteBySupplierId(supplierId);
+        shipmentRepository.deleteBySupplierId(supplierId);
         productRepository.deleteBySupplierId(supplierId);
         warehouseRepository.deleteBySupplierId(supplierId);
         supplierRepository.deleteBySupplierId(supplierId);

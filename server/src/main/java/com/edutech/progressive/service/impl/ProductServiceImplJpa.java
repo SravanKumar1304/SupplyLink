@@ -22,8 +22,8 @@ public class ProductServiceImplJpa implements ProductService {
     @Autowired
     WarehouseRepository warehouseRepository;
  
-    // @Autowired
-    // ShipmentRepository shipmentRepository;
+    @Autowired
+    ShipmentRepository shipmentRepository;
  
     @Autowired
     public ProductServiceImplJpa(ProductRepository productRepository) {
@@ -59,7 +59,7 @@ public class ProductServiceImplJpa implements ProductService {
  
     @Override
     public void deleteProduct(int productId) throws SQLException {
-        // shipmentRepository.deleteByProductId(productId);
+        shipmentRepository.deleteByProductId(productId);
         productRepository.deleteById(productId);
     }
  

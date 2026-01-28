@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.edutech.progressive.entity.Warehouse;
 import com.edutech.progressive.exception.NoWarehouseFoundForSupplierException;
 import com.edutech.progressive.repository.ProductRepository;
+import com.edutech.progressive.repository.ShipmentRepository;
 import com.edutech.progressive.repository.WarehouseRepository;
 import com.edutech.progressive.service.WarehouseService;
  
@@ -20,8 +21,8 @@ public class WarehouseServiceImplJpa implements WarehouseService {
     @Autowired
     ProductRepository productRepository;
  
-    // @Autowired
-    // ShipmentRepository shipmentRepository;
+    @Autowired
+    ShipmentRepository shipmentRepository;
  
     private WarehouseRepository warehouseRepository;
  
@@ -54,7 +55,7 @@ public class WarehouseServiceImplJpa implements WarehouseService {
  
     @Override
     public void deleteWarehouse(int warehouseId) throws SQLException {
-        // shipmentRepository.deleteByWarehouseId(warehouseId);
+        shipmentRepository.deleteByWarehouseId(warehouseId);
         productRepository.deleteByWarehouseId(warehouseId);
         warehouseRepository.deleteById(warehouseId);
     }
